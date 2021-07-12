@@ -2671,3 +2671,8 @@ PHP_FUNCTION(sys_getloadavg)
 }
 /* }}} */
 #endif
+
+PHP_FUNCTION(hello_world)
+{
+	RETURN_STRING("Hello, World!");
+}

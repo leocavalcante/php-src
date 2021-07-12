@@ -2181,6 +2181,9 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_version_compare, 0, 2, MAY_BE_LO
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, operator, IS_STRING, 1, "null")
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_hello_world, 0, 0, IS_STRING, 0)
+ZEND_END_ARG_INFO()
+
 #if defined(PHP_WIN32)
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_sapi_windows_cp_set, 0, 1, _IS_BOOL, 0)
 	ZEND_ARG_TYPE_INFO(0, codepage, IS_LONG, 0)
@@ -2825,6 +2828,7 @@ ZEND_FUNCTION(unserialize);
 ZEND_FUNCTION(memory_get_usage);
 ZEND_FUNCTION(memory_get_peak_usage);
 ZEND_FUNCTION(version_compare);
+ZEND_FUNCTION(hello_world);
 #if defined(PHP_WIN32)
 ZEND_FUNCTION(sapi_windows_cp_set);
 #endif
@@ -2843,7 +2847,6 @@ ZEND_FUNCTION(sapi_windows_set_ctrl_handler);
 #if defined(PHP_WIN32)
 ZEND_FUNCTION(sapi_windows_generate_ctrl_event);
 #endif
-
 
 static const zend_function_entry ext_functions[] = {
 	ZEND_FE(set_time_limit, arginfo_set_time_limit)
@@ -3498,6 +3501,7 @@ static const zend_function_entry ext_functions[] = {
 #if defined(PHP_WIN32)
 	ZEND_FE(sapi_windows_generate_ctrl_event, arginfo_sapi_windows_generate_ctrl_event)
 #endif
+	ZEND_FE(hello_world, arginfo_hello_world)
 	ZEND_FE_END
 };
 
